@@ -43,3 +43,9 @@
   padding: 15px;
   border-radius: 20px;
 }
+.person {
+  background-color: salmon;
+  border: 3px solid lightblue;
+  border-radius: 20px;
+  margin: 10px;
+}

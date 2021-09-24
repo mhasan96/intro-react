@@ -2,47 +2,68 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const number = 2227;
-  const singer = {
-    name: "Mahfuzur Rahman",
-    profession: "Singer",
-    ability: "Gaan Pare nah",
-  };
+  const nayoks = [
+    "Rubel",
+    "Bapparaz",
+    "Koober",
+    "Jashim",
+    "Partho",
+    "chanchal",
+  ];
+  const naykas = ["Moushumi", "Shomi Kaiser", "Piya Bipasha"];
 
-  //dynamic Style
-  const SingerStyle = {
-    backgroundColor: "cyan",
-    color: "white",
-  };
+  const cinemas = [
+    { nayok: "koober", nayika: "Kopila" },
+    { nayok: "Rubel", nayika: "Moushumi" },
+    { nayok: "Razzak", nayika: "Shabana" },
+    { nayok: "Jashim", nayika: "Bobita" },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <h3>Yo Yo React Mama!!!</h3>
-        <p>React Kemon Dekhtesi re Mama</p>
+      {/* This one is Dynamic, Now jake add korbo oi list a add hobe */}
 
-        <div className="container">
-          <h3>This is indise my Container</h3>
-          <p>My number is: {number} </p>
-          <p style={SingerStyle}>
-            Singer: {singer.name} <br /> Job:{" "}
-            {singer.profession + " " + singer.ability}
-          </p>
-        </div>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul>
+        {nayoks.map((nayok) => (
+          <li>{nayok}</li>
+        ))}
+      </ul>
+      {/* <Cinema nayok="Js Bond" Nayika="Cat Women"></Cinema> */}
+      {cinemas.map((cinema) => (
+        <Cinema nayok={cinema.nayok} nayika={cinema.nayika}></Cinema>
+      ))}
     </div>
   );
 }
+
+function Cinema(props) {
+  return (
+    <div className="person">
+      <h2>Nayok: {props.nayok}</h2>
+      <h2>Nayika: {props.nayika}</h2>
+    </div>
+  );
+}
+
+/* function Person(props) {
+  console.log(props);
+  return (
+    <div className="person">
+      <h2>Name: {props.name}</h2>
+      <h4>Naykas: {props.name2}</h4>
+    </div>
+  );
+} */
+
+/* 
+{/* THis one is not dynamic, THats why last er name gulah add hoyni }
+
+<Person name={nayoks[0]} name2={naykas[0]}></Person>
+<Person name={nayoks[1]} name2={naykas[1]}></Person>
+<Person name={nayoks[2]} name2={naykas[2]}></Person>
+*/
+/*     <div className="App">
+      <Person name="Rubel" nayika="Moushumi"></Person>
+      <Person name="BappaRaz" nayika="SentiRani"></Person>
+    </div> */
 
 export default App;
